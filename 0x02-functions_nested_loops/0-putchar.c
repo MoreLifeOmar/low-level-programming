@@ -1,7 +1,7 @@
-#include <main.h>
+#include <stdio.h>
 
 /**
- * main - Prints Holberton as a message.
+ * main - Prints Putchar as a message.
  *
  * Return: Always 0 (Success)
  */
