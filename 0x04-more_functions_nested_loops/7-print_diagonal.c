@@ -1,4 +1,4 @@
-#include "main.h"
+#include "holberton.h"
 
 /**
 * Draw a diagonal line on the terminal
