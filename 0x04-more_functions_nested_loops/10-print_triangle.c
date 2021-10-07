@@ -1,4 +1,4 @@
-#include "main.h"
+#include "holberton.h"
 
 /**
 * Print a triangle followed by a new line
