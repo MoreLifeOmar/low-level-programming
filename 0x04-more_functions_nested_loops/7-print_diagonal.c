@@ -1,12 +1,11 @@
 #include "main.h"
 
 /**
-* Draw a diagonal line on the terminal
-* Diagonal should end with a \n
-*/
-
+ * print_diagonal - prints diagonal line n times.
+ * @n: times diagonal line is printed.
+ * Return: no return.
+ */
 void print_diagonal(int n)
-
 {
 	int i, j;
 
