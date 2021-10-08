@@ -1,36 +1,23 @@
-#include "main.h"
+#include <stdio.h>
 
 /**
-* Print an integer
-* Return: Always 0.
-*/
+ * main - prints largest prime factor.
+ * Return: Always 0.
+ */
 
-void print_number(int n);
-
+int main(void)
 {
-	unsigned int m, d, count;
+	long int n, fp;
 
-	if (n < 0)
+	n = 612852475143;
+	for (fp = 2; fp <= n; fp++)
 	{
-		_putchar(45);
-		m = n * -1;
+		if (n % fp == 0)
+		{
+			n /= fp;
+			fp--;
+		}
 	}
-	else
-	{
-		m = n;
-	}
-
-	d = m;
-	count = 1;
-
-	while (d > 9)
-	{
-		d /= 10;
-		count *= 10;
-	}
-
-	for (; count >= 1; count /= 10)
-	{
-		_putchar(((m / count) % 10) + 48);
-	}
+	printf("%ld\n", fp);
+	return (0);
 }
