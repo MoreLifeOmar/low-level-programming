@@ -1,13 +1,11 @@
 #include "main.h"
 
 /**
-* Draws a straight line in the terminal.
-* Line should end with a new line
-* If n is 0 or less, the function should only print \n
-*/
-
-void print_line(int n);
-
+ * print_line - prints straight line n times.
+ * @n: times straight line is printed.
+ * Return: no return.
+ */
+void print_line(int n)
 {
 	int i;
 
