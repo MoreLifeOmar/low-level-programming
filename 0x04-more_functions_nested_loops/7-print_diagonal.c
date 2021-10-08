@@ -5,7 +5,7 @@
 * Diagonal should end with a \n
 */
 
-void print_diagonal(int n);
+void print_diagonal(int n)
 
 {
 	int i, j;
