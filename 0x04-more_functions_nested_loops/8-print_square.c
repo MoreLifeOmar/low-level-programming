@@ -1,12 +1,11 @@
-#include "main.h"
+#include "holberton.h"
 
 /**
-* Print a square, followed by a new line
-* Use the character # to print the square
-*/
-
-void print_square(int size);
-
+ * print_square - prints hashes squares.
+ * @size: size of the square.
+ * Return: no return.
+ */
+void print_square(int size)
 {
 	int i, j;
 
