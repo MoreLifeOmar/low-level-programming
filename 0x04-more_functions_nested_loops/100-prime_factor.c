@@ -5,7 +5,7 @@
 * Followed by a new line.
 */
 
-int main (void);
+int main (void)
 
 {
 long int n, fp;
