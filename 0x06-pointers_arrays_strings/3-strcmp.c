@@ -1,4 +1,4 @@
-#include "main.h"
+#include "holberton.h"
 /**
  * _strcmp - compare 2 string
  * @s1:string
