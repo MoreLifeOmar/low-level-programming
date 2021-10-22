@@ -1,7 +1,5 @@
-
 #include <stdio.h>
 #include <stdlib.h>
-#include "holberton.h"
 
 /**
  * main - starting point of the program
