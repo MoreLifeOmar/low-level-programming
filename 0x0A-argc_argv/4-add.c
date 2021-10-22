@@ -28,5 +28,5 @@ int main(int argc, char *argv[])
 		res = res + a;
 	}
 	printf("%d\n", res);
-	return (0)
+	return (0);
 }
