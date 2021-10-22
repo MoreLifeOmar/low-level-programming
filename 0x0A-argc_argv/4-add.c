@@ -1,32 +1,26 @@
-#include <stdlib.h>
+
 #include <stdio.h>
+#include <stdlib.h>
+#include "holberton.h"
 
 /**
- * main - mult two numbers
- * @argc: count arg
- * @argv: array arg
- * Return: Success 0, Error 1
+ * main - starting point of the program
+ * @argc: number of arguments
+ * @argv: arguments
+ *
+ * Return: 0
  */
-int main(int argc, char *argv[])
+int main(int argc, char **argv)
 {
-	int i = 1, res = 0, a = 0;
+	int sum = 0, argc_tmp = --argc;
+	char *argv_tmp = argc ? *++argv : "";
 
-	if (argc == 0)
-	{
-		printf("%d\n", 0);
-		return (0);
-	}
+	for (; *argv_tmp || ((argc_tmp -= !*argv_tmp) > 0); argv_tmp++)
+		if (*argv_tmp && (*argv_tmp < '0' || *argv_tmp > '9'))
+			return (printf("Error\n") && 1);
+	while (argc--)
+		sum += atoi(*argv++);
+	printf("%d\n", sum);
 
-	for (; i < argc; i++)
-	{
-		a = strtol(argv[i], NULL, 10);
-		if (!a)
-		{
-			printf("Error\n");
-			return (1);
-		}
-		res = res + a;
-	}
-	printf("%d\n", res);
 	return (0);
 }
