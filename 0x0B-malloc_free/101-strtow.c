@@ -3,62 +3,67 @@
 #include <stdlib.h>
 
 /**
- * strtow - concatenates all the arguments of your program
- *@str: string
- *@av: arguments
- * Return: a pointer to a new string
+ * _isspace - check if a character is whitespace
+ * @c: the character to check
+ *
+ * Return: 1 is c is a whitespace character, otherwise 0
+ */
+int _isspace(int c)
+{
+	if (c == 0x20 || (c >= 0x09 && c <= 0x0d))
+		return (1);
+	return (0);
+}
+
+
+/**
+ * strtow - split a string into words
+ * @str: a pointer to the string to split
+ *
+ * Return: NULL if memory allocation fails or if str is NULL or empty (""),
+ * otherwise return a pointer to the array of words terminated by a NULL
  */
 char **strtow(char *str)
 {
-	int i, w, j, k, count, m, wordf;
-	char **p;
-	char *x;
+	char **words, *pos = str;
+	int w = 0, c;
 
-	w = 0;
-	j = 0;
-	i = 0;
-	count = 0;
-	if (*str == '\0' || str == NULL)
+	if (!(str && *str))
 		return (NULL);
-	for (i = 0; str[i] != '\0'; i++)
-	{
-		if (str[i] == ' ' && (str[i + 1] != ' ' || str[i + 1] == '\0'))
-			w++;
-	}
-	p = (char **)malloc((w + 1) * sizeof(char *));
-	if (p == NULL)
+	do {
+		while (_isspace(*pos))
+			++pos;
+		if (!*pos)
+			break;
+		while (*(++pos) && !_isspace(*pos))
+			;
+	} while (++w, *pos);
+	if (!w)
 		return (NULL);
-	for (wordf = 0; str[wordf] && j <= w; wordf++)
-	{
-		count = 0;
-		if (str[wordf] != ' ')
+	words = (char **) malloc(sizeof(char *) * (w + 1));
+	if (!words)
+		return (NULL);
+	w = 0, pos = str;
+	do {
+		while (_isspace(*pos))
+			++pos;
+		if (!*pos)
+			break;
+		for (str = pos++; *pos && !_isspace(*pos); ++pos)
+			;
+		words[w] = (char *) malloc(sizeof(char) * (pos - str + 1));
+		if (!words[w])
 		{
-			for (i = wordf ; str[i] != '\0'; i++)
-			{
-				if (str[i] == ' ')
-					break;
-				count++;
-			}
-			*(p + j) = (char *)malloc((count + 1) * sizeof(char));
-			if (*(p + j) == NULL)
-			{
-				for (k = 0; k <= j; k++)
-				{
-					x = p[k];
-					free(x);
-				}
-				free(p);
-				return (NULL);
-			}
-			for (m = 0; wordf < i; wordf++)
-			{
-				p[j][m] = str[wordf];
-				m++;
-			}
-			p[j][m] = '\0';
-			j++;
+			while (w >  0)
+				free(words[--w]);
+			free(words);
+			return (NULL);
 		}
-	}
-	p[j] = NULL;
-	return (p);
+		for (c = 0; str < pos; ++c, ++str)
+			words[w][c] = *str;
+		words[w][c] = '\0';
+	} while (++w, *pos);
+	words[w] = NULL;
+	return (words);
 }
+
