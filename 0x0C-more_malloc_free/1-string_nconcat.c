@@ -1,5 +1,5 @@
 #include <stdlib.h>
-#include "holberton.h"
+#include "main.h"
 /**
  * string_nconcat - concatenate tw strings specially
  * @s1: first string
