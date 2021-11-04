@@ -8,7 +8,7 @@
 
 section .data
 
-	message db "Hello, Holberton", nl
+	message db "Hello, World", nl
 
 section .text
 	global main
