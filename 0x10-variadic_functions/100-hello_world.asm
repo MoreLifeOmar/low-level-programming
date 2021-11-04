@@ -1,23 +1,14 @@
-%define sys_write 1
-%define stdout 1
-
-%define sys_exit 60
-%define success 0
-
-%define nl 10
-
 section .data
-
-	message db "Hello, World", nl
+	msg db	"Hello, World", `\n`
 
 section .text
 	global main
 main:
-	mov rax, sys_write
-	mov rdi, stdout
-	mov rsi, message
-	mov rdx, 17
+	mov	rax, 1
+	mov	rdi, 1
+	mov	rsi, msg
+	mov	rdx, 17
 	syscall
-	mov    rax, sys_exit
-	mov    rdi, success
+	mov    rax, 60
+	mov	rdi, 0
 	syscall
