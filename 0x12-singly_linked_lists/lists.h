@@ -1,7 +1,3 @@
-//
-// Created by dreamdaddybanks on 11/15/21.
-//
-
 #ifndef _LISTS_H_
 #define _LISTS_H_
 #include <stdio.h>
