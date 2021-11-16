@@ -3,7 +3,7 @@
 
 /**
   * pop_listint - Deletes the head node of a listint_t linked list
-  * @head: The head of the node
+  * @head: The head of the linked list
   *
   * Return: to the head node’s data (n)
   */
