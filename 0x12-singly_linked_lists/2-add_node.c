@@ -1,4 +1,7 @@
 #include "lists.h"
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
 /**
  * add_node - adds a node to the first of a list.
  * @h: constant list.
