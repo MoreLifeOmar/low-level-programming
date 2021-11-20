@@ -1,28 +1,18 @@
 #include <stdio.h>
-#include <string.h>
-#include <stdlib.h>
 #include "lists.h"
 /**
- * add_node - adds a node to the first of a list.
+ * list_len - calculates the number of lists it contains.
  * @h: constant list.
- * Return: the address of the new element, or NULL if it failed
+ * Return: the number of nodes.
  */
-list_t *add_node(list_t **head, const char *str)
+size_t list_len(const list_t *h)
 {
-unsigned int i = 0;
-list_t *temp;
-list_t *new;
-new = malloc(sizeof(list_t));
-if (new == NULL || str == NULL)
-return (0);
-new->str = strdup(str);
-while (str[i])
-i++;
-new->len = i;
-temp = malloc(sizeof(list_t));
-if (temp == NULL)
-return (0);
-new->next = *head;
-*head = new;
-return (new);
+size_t l;
+l = 0;
+l++;
+if (h->next != NULL)
+{
+return (l + list_len(h->next));
+}
+return (l);
 }
