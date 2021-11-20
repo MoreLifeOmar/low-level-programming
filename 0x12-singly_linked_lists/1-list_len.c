@@ -1,18 +1,21 @@
 #include "lists.h"
+#include <stdlib.h>
+#include <stdio.h>
 /**
- *listint_len - determines list len
- *@h: head of the list
- *Return: length of linked list or (NULL) if it doesn't exist
+ *list_len: ...
+ *@h: ...
+ *Return: ...
  */
-size_t listint_len(const listint_t *h)
-{
-size_t nodes;
 
-nodes=0;
-while (h)
+size_t list_len(const list_t *h)
 {
-	nodes++;
-	h=h->next;
-}
-	return (nodes);
+size_t i;
+const list_t *p = h;
+	i = 0;
+	while (p)
+	{
+		i++;
+		p = p->next;
+	}
+	return (i);
 }
