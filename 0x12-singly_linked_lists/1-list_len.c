@@ -1,12 +1,11 @@
-#include "lists.h"
-#include <stdlib.h>
 #include <stdio.h>
+#include <stdlib.h>
+#include "lists.h"
 /**
- *list_len: ...
- *@h: ...
- *Return: ...
+ *list_len - returns chained list length
+ *@h: head of the list
+ *Return: list len
  */
-
 size_t list_len(const list_t *h)
 {
 size_t i;
