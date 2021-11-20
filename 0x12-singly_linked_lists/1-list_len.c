@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include "lists.h"
 /**
- * list_len - calculate the number of lists it contains.
+ * list_len - calculates the number of lists it contains.
  * @h: constant list.
  * Return: the number of nodes.
  */
