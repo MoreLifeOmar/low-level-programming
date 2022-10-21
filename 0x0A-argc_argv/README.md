@@ -1,1 +1,1 @@
-# argc argv
+# argc && argv
